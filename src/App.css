@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+.hp_sm_popup_menu_body .back-top{
+    bottom: 180px !important;
+}
+
+@media (min-width: 1024px) {
+    .hp_sm_popup_menu_body .back-top {
+        bottom: 190px !important;
+    }
+}
