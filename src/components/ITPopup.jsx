@@ -1,5 +1,5 @@
 import React from 'react';
-import PopupMenu from 'harrison-react-popup-menu';
+import PopupMenu from 'react-ui-popup-menu';
 
 const ITPopupMenu = props => {
 
@@ -9,7 +9,6 @@ const ITPopupMenu = props => {
         visiable === true? 
             body.classList.add("hp_sm_popup_menu_body"):
             body.classList.remove("hp_sm_popup_menu_body")
-
     }
 
     function closeFunc(){
