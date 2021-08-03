@@ -3,9 +3,8 @@ import PopupMenu from 'react-ui-popup-menu';
 
 const ITPopupMenu = props => {
 
-    const { title, eventCategory } = props;
+    const { eventLabel, eventCategory } = props;
     
-
     function startFunc(props){
         const { isVisiable } = props;
 
@@ -36,7 +35,7 @@ const ITPopupMenu = props => {
         if(window.gtag)
             window.gtag('event', action, {
                 'event_category' : eventCategory,
-                'event_label' : title
+                'event_label' : eventLabel
             });
     }
 
@@ -44,7 +43,7 @@ const ITPopupMenu = props => {
 }
 
 ITPopupMenu.defaultProps = {
-    title: 'Lorem Ipsum',
+    eventLabel: '${ga_campaign_name}',
     eventCategory: 'homepage_popup'
 }
 

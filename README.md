@@ -1,6 +1,6 @@
-# Popup Component
+# I.T Popup Component
 
-## Whats it look like?
+## Extend from?
 https://www.npmjs.com/package/react-ui-popup
 
 ## What is it
@@ -10,7 +10,7 @@ https://www.npmjs.com/package/react-ui-popup
 
 ## install
 ```
-install --save-dev react-it-popup
+npm install react-it-popup
 
 ```
 
@@ -20,8 +20,19 @@ import ITPopupMenu from 'react-it-popup';
 
 ```
 
+```
+<ITPopupMenu {...{
+    title: "Lorem Ipsum",
+    content: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+    href: "https://www.google.com/",
+    imgSrc: "https://www.hebergementwebs.com/image/bf/bf49927d9ce10f2cf967fb3a71cd55ed.jpg/crop-an-image-with-paint-powerpoint-photoshop-or-online.jpg",
+    eventLabel: "${ga_campaign_name}",
+    eventCategory: 'homepage_popup'
+}}/>
+```
+
 ## extend props
 |attribute|description|type|value|default|
-|---|---|---|---|--|
-|eventCategory| GA Tracking Category | string ||homepage_popup|
-|title||
+|---|---|---|---|---|
+|eventCategory|GA Tracking Category|string||homepage_popup|
+|eventLabel|GA Tracking Lable|string||${ga_campaign_name}|
