@@ -1,9 +1,21 @@
 {
-  "name": "react-ui-it-popup-menu",
-  "version": "1.0.2",
+  "name": "react-ui-it-popup",
+  "version": "1.0.0",
   "private": false,
-  "description": "React IT Popup",
+  "description": "React Popup, update ITeSHOP back-top element and handle GA",
   "main": "./dist/index.js",
+  "homepage": "https://github.com/harrisonh1991/react-it-popup-component.git",
+  "url" : "https://github.com/harrisonh1991/react-it-popup-component.git",
+  "email" : "kye0038883@gmail.com",
+  "author": "Harrison Huang <kye0038883@gmail.com>)",
+  "keywords": [
+    "react",
+    "popup",
+    "small",
+    "cookie",
+    "GA",
+    "track"
+  ],
   "license": "MIT",
   "dependencies": {
     "js-cookie": "^3.0.0",
