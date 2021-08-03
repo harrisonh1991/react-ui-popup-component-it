@@ -32,7 +32,7 @@ import ITPopupMenu from 'react-it-popup';
 ```
 
 ## extend props
-|attribute|description|type|value|default|
+|attribute|description|type|propType|default|
 |---|---|---|---|---|
 |eventCategory|GA Tracking Category|string||homepage_popup|
 |eventLabel|GA Tracking Lable|string||${ga_campaign_name}|
