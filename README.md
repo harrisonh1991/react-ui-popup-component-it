@@ -21,7 +21,12 @@ import ITPopupMenu from 'harrison-react-it-popup-menu';
 
 ```
 
-
-
+## extend from other package
 Using harrison-react-popup-menu NPM Page, Please view below
 https://www.npmjs.com/package/harrison-react-popup-menu
+
+
+## extend props
+|attribute|description|type|value|default|
+|---|---|---|---|--|
+|eventCategory| GA Tracking Category | string ||homepage_popup|

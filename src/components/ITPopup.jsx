@@ -3,32 +3,49 @@ import PopupMenu from 'react-ui-popup-menu';
 
 const ITPopupMenu = props => {
 
-    const { title } = props;
+    const { title, eventCategory } = props;
+    
 
-    var body = document.querySelector("body");
+    function startFunc(props){
+        const { isVisiable } = props;
 
-    function startFunc(visiable){
-        visiable === true? 
-            body.classList.add("hp_sm_popup_menu_body"):
-            body.classList.remove("hp_sm_popup_menu_body")
+        var body = document.querySelector("body");
+
+        if(!isVisiable)
+            return body.classList.remove("hp_sm_popup_menu_body");
+
+        body.classList.add("hp_sm_popup_menu_body");
+        GTATrack('view');
     }
 
-    function enterFunc(){
-        window.gtag('event', 'homepage_popup_menu', {
-            'event_category' : 'popup_menu_open',
-            'event_label' : title
-        });
+    function hoverFunc(props){
+        GTATrack('hover');
+    }
+
+    function enterFunc(props){
+        GTATrack('open');
     }
 
     function closeFunc(){
+        var body = document.querySelector("body");
         body.classList.remove("hp_sm_popup_menu_body");
-        window.gtag('event', 'homepage_popup_menu', {
-            'event_category' : 'popup_menu_close',
-            'event_label' : title
-        });
+        GTATrack('close');
     }
 
-    return <PopupMenu {...props} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}/>
+    function GTATrack(action){
+        if(window.gtag)
+            window.gtag('event', action, {
+                'event_category' : eventCategory,
+                'event_label' : title
+            });
+    }
+
+    return <PopupMenu {...props}  hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}/>
+}
+
+ITPopupMenu.defaultProps = {
+    title: 'Lorem Ipsum',
+    eventCategory: 'homepage_popup'
 }
 
 export default ITPopupMenu;
