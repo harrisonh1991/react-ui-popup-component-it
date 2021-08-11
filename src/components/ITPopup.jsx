@@ -1,5 +1,5 @@
 import React from 'react';
-import PopupMenu from 'react-ui-popup-menu';
+import PopupMenu from 'react-ui-popup';
 
 const ITPopupMenu = props => {
 
