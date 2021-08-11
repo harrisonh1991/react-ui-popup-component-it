@@ -16,9 +16,9 @@ package-lock.json
 .babelrc
 .gitattributes
 .webpack.config.js
-public/**/*
-src/**/*
+build/*
 package-lock.json
 webpack.config.js
 .babelrc
 .gitattributes
+*.txt
