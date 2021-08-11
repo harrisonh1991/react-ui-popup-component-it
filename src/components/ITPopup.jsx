@@ -42,9 +42,4 @@ const ITPopupMenu = props => {
     return <PopupMenu {...props}  hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}/>
 }
 
-ITPopupMenu.defaultProps = {
-    eventLabel: '${ga_campaign_name}',
-    eventCategory: 'homepage_popup'
-}
-
 export default ITPopupMenu;
