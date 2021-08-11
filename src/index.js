@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ITPopupMenu from './components/ITPopup.jsx';
-import './App.css';
+import './index.css';
 
 ReactDOM.render(
     <React.StrictMode>
