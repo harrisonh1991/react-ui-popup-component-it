@@ -6,16 +6,17 @@ https://www.npmjs.com/package/react-ui-popup
 ## What is it
 1. extend from react-ui-popup
 2. Popup menu
-3. To fix .top-back element block eachother, this package include the function to update change the style of .top-back element when popup menu exist.
+3. have ga tracking
+4. for iteshop
 
 ## install
 ```
-npm install react-it-popup
+npm install react-ui-it-popup
 ```
 
 ## import
 ```
-import ITPopupMenu from 'react-it-popup';
+import ITPopupMenu from 'react-ui-it-popup';
 ```
 
 ```
