@@ -33,6 +33,7 @@ import ITPopupMenu from 'react-ui-it-popup';
     },
     href: "https://www.google.com/",
     eventLabel: "Lorem Ipsum",
+    cookieName: 'section1_20210831'
     eventCategory: 'homepage_popup'
 }}/>
 ```
