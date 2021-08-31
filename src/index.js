@@ -5,21 +5,24 @@ import ITPopupMenu from './components/ITPopup.jsx';
 ReactDOM.render(
     <React.StrictMode>
         <ITPopupMenu {...{
-            title: 'Lorem Ipsum',
-            content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+            title: <span style={{fontFamily: 'HelveticaNeueLTStdHvEx, PingFangSC-Regular, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", sans-serif'}}>Join the ITeSHOP fam!</span>,
+            content: 'Enjoy membership discounts, exclusive drops and up to 15% off on selected products',
             theme: 'light',
             background: {
                 dataSets: {
-                    0: 'https://images.unsplash.com/photo-1612404748636-568ca4155994?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2t5JTIwY2xvdWRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
-                    1024: 'https://media-exp1.licdn.com/dms/image/C511BAQE0NnIkjkotGA/company-background_10000/0/1541489744017?e=2159024400&v=beta&t=8CzJngJh5TrtF6_WFRYSlDeycAkT52hAfb4qLYGYnv8'
+                    0: '//ithk-pro-itmall-resources.oss-cn-hongkong.aliyuncs.com/2/2021/8/30/16302911286271030.png'
                 },
-                alt: 'test'
+                alt: 'lead generation'
             },
-            href: "https://www.google.com/",
-            eventLabel: "Lorem Ipsum",
-            eventCategory: 'homepage_popup'
+            href: "https://my-hk.iteshop.com/?ts=newbies10off20210831",
+            eventLabel: "sit lead generation 20210830",
+            eventCategory: 'homepage_popup',
+            enterLabel: 'SIGN UP',
+            classCtaClose: {
+                href: 'href1',
+                svg: 'svg1'
+            }
         }}/>
-        <>123</>
     </React.StrictMode>,
     document.getElementById('root')
 );
