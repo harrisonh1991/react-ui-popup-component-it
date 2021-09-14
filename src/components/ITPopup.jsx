@@ -40,7 +40,7 @@ const ITPopupMenu = props => {
             });
     }
 
-    return <PopupMenu {...props}  hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}/>
+    return <PopupMenu {...props}  hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}>{props.children}</PopupMenu>
 }
 
 export default ITPopupMenu;
