@@ -2,12 +2,13 @@
     box-sizing: border-box;
 }
 
-.hp_sm_popup_menu_body .back-top{
+.hp_sm_popup_menu_body .back-to-top{
     bottom: 180px !important;
+    transform: translateX(-100%) !important;
 }
 
 @media (min-width: 1024px) {
-    .hp_sm_popup_menu_body .back-top {
-        bottom: 190px !important;
+    .hp_sm_popup_menu_body .back-to-top {
+        bottom: 180px !important;
     }
 }
