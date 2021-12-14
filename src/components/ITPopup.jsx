@@ -6,14 +6,23 @@ const ITPopupMenu = props => {
 
     const { eventLabel, eventCategory } = props;
     const refPopup = useRef(null);
+    const [width, setWidth] = useState(-1);
+
+    useEffect(() => {
+        console.log('hiihihih')
+
+        window.addEventListener('resize', function(){
+            console.log('update width')
+            setWidth(window.innerWidth);
+        })
+    }, [])
 
     useEffect(() => {
         if(!refPopup)
             return;
         var _height = refPopup.current.clientHeight;
         document.querySelector('.back-to-top').style.bottom = _height + 'px';
-
-    }, [refPopup])
+    }, [width])
     
     function startFunc(props){
         const { isVisiable } = props;
