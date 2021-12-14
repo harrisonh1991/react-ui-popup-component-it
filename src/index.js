@@ -4,6 +4,7 @@ import ITPopupMenu from './components/ITPopup.jsx';
 
 ReactDOM.render(
     <React.StrictMode>
+        <div className='back-to-top' style={{position: 'fixed', background: 'black', width: 30, height: 30}}></div>
         <ITPopupMenu {...{
             title: <span style={{fontFamily: 'HelveticaNeueLTStdHvEx, PingFangSC-Regular, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", sans-serif'}}>Join the ITeSHOP fam!</span>,
             content: 'Enjoy membership discounts, exclusive drops and up to 15% off on selected products',

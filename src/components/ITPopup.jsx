@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import PopupMenu from 'react-ui-popup';
 import '../../src/index.css';
 
 const ITPopupMenu = props => {
 
     const { eventLabel, eventCategory } = props;
+    const refPopup = useRef(null);
+
+    useEffect(() => {
+        if(!refPopup)
+            return;
+        console.log('ihihih')
+        console.log(refPopup.current);
+
+    }, [refPopup])
     
     function startFunc(props){
         const { isVisiable } = props;
@@ -40,7 +49,7 @@ const ITPopupMenu = props => {
             });
     }
 
-    return <PopupMenu {...props}  hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}>{props.children}</PopupMenu>
+    return <PopupMenu {...props} ref={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}>{props.children}</PopupMenu>
 }
 
 export default ITPopupMenu;
