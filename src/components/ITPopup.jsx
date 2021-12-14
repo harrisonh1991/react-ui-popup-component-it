@@ -10,8 +10,8 @@ const ITPopupMenu = props => {
     useEffect(() => {
         if(!refPopup)
             return;
-        console.log('ihihih')
-        console.log(refPopup.current);
+        var _height = refPopup.current.clientHeight;
+        document.querySelector('.back-to-top').style.bottom = (_height + 20) + 'px';
 
     }, [refPopup])
     
@@ -49,7 +49,7 @@ const ITPopupMenu = props => {
             });
     }
 
-    return <PopupMenu {...props} ref={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}>{props.children}</PopupMenu>
+    return <PopupMenu {...props} refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}>{props.children}</PopupMenu>
 }
 
 export default ITPopupMenu;
