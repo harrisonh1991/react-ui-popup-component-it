@@ -11,7 +11,7 @@ const ITPopupMenu = props => {
         if(!refPopup)
             return;
         var _height = refPopup.current.clientHeight;
-        document.querySelector('.back-to-top').style.bottom = (_height + 20) + 'px';
+        document.querySelector('.back-to-top').style.bottom = _height + 'px';
 
     }, [refPopup])
     
