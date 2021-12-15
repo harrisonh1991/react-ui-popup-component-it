@@ -9,10 +9,7 @@ const ITPopupMenu = props => {
     const [width, setWidth] = useState(-1);
 
     useEffect(() => {
-        console.log('hiihihih')
-
         window.addEventListener('resize', function(){
-            console.log('update width')
             setWidth(window.innerWidth);
         })
     }, [])
