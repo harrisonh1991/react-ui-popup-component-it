@@ -6,19 +6,23 @@ ReactDOM.render(
     <React.StrictMode>
         <div className='back-to-top' style={{position: 'fixed', background: 'black', width: 30, height: 30, right: '20px'}}></div>
         <ITPopupMenu {...{
-            title: <span style={{fontFamily: 'HelveticaNeueLTStdHvEx, PingFangSC-Regular, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", sans-serif'}}>Join the ITeSHOP fam!</span>,
+            title: 'Lorem Ipsum',
             content: 'Enjoy membership discounts, exclusive drops and up to 15% off on selected products',
-            theme: 'light',
+            theme: 'dark',
             background: {
                 dataSets: {
-                    0: '//ithk-pro-itmall-resources.oss-cn-hongkong.aliyuncs.com/2/2021/8/30/16302911286271030.png'
+                    0: {
+                        src: 'https://staging-ap01-itapparels.demandware.net/on/demandware.static/-/Sites-IT-HK-Library/default/dwe2d7ce88/landingPageCreative/2022/1/w2/HK_BIT_MiniPopUp_DT_SnowPeak_ForkSet_GWP_Mockup_Bkg_v3.jpg', width: 295, height: 188
+                    }
                 },
                 alt: 'lead generation'
             },
-            href: "https://my-hk.iteshop.com",
+            href: "https://www.google.com/",
             eventLabel: "sit lead generation 20210830",
             eventCategory: 'homepage_popup',
-            enterLabel: 'SIGN UP',
+            ctaEnter: {
+                content: 'Register Now'
+            },
             classCtaClose: {
                 href: 'href1',
                 svg: 'svg1'

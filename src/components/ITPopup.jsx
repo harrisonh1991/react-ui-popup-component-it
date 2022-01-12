@@ -77,7 +77,9 @@ const ITPopupMenu = props => {
             });
     }
 
-    return <PopupMenu {...props} refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc} href={props.href + (parameter === ''? '' : `?${parameter}`)}>{props.children}</PopupMenu>
+    return <PopupMenu {...props} refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc} href={props.href + (parameter === ''? '' : `?${parameter}`)}>
+        {props.children}
+    </PopupMenu>
 }
 
 ITPopupMenu.defaultProps = {
