@@ -15,7 +15,7 @@ ReactDOM.render(
                 },
                 alt: 'lead generation'
             },
-            href: "https://my-hk.iteshop.com/?ts=newbies10off20210831",
+            href: "https://my-hk.iteshop.com",
             eventLabel: "sit lead generation 20210830",
             eventCategory: 'homepage_popup',
             enterLabel: 'SIGN UP',
