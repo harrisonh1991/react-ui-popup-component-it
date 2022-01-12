@@ -10,7 +10,7 @@ const ITPopupMenu = props => {
     const { eventLabel, eventCategory, tscodeParameter } = props;
     const refPopup = useRef(null);
     const [width, setWidth] = useState(-1);
-    const [parameter, setParameter] = useState();
+    const [parameter, setParameter] = useState('');
 
     useEffect(() => {
         window.addEventListener('resize', function(){
@@ -29,9 +29,11 @@ const ITPopupMenu = props => {
             console.log(`parameter tscode: ${tscode} | isvalid: ${tscode !== ''}`);
         }
 
-        var para = new URLSearchParams();
-        para.append('tscode', tscode);
-        setParameter(para.toString())
+        if(tscode !== ''){
+            var para = new URLSearchParams();
+            para.append('tscode', tscode);
+            setParameter(para.toString())
+        }
     }, [])
 
     useEffect(() => {
@@ -75,11 +77,11 @@ const ITPopupMenu = props => {
             });
     }
 
-    return <PopupMenu {...props} refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc} href={props.href + (parameter !== '' && `?${parameter}`)}>{props.children}</PopupMenu>
+    return <PopupMenu {...props} refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc} href={props.href + (parameter === ''? '' : `?${parameter}`)}>{props.children}</PopupMenu>
 }
 
 ITPopupMenu.defaultProps = {
-    tscodeParameter: 'default tscode parameter'
+    tscodeParameter: ''
 }
 
 export default ITPopupMenu;
