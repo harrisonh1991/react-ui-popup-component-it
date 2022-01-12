@@ -10,7 +10,7 @@ const ITPopupMenu = props => {
     const { eventLabel, eventCategory, tscodeParameter } = props;
     const refPopup = useRef(null);
     const [width, setWidth] = useState(-1);
-    const [parameter, setParameter] = useState('');
+    const [url, setUrl] = useState();
 
     useEffect(() => {
         window.addEventListener('resize', function(){
@@ -32,7 +32,7 @@ const ITPopupMenu = props => {
         if(tscode !== ''){
             var para = new URLSearchParams();
             para.append('tscode', tscode);
-            setParameter(para.toString())
+            setUrl(props.href + '?'+ para.toString())
         }
     }, [])
 
@@ -42,6 +42,10 @@ const ITPopupMenu = props => {
         var _height = refPopup.current.clientHeight;
         document.querySelector('.back-to-top').style.bottom = _height + 'px';
     }, [width])
+
+    useEffect(() => {
+
+    }, [url])
     
     function startFunc(props){
         const { isVisiable } = props;
@@ -77,7 +81,7 @@ const ITPopupMenu = props => {
             });
     }
 
-    return <PopupMenu refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc} href={props.href + (parameter === ''? '' : `?${parameter}`)} {...props}>
+    return <PopupMenu refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}  {...props} href={url? url: props.href}>
         {props.children}
     </PopupMenu>
 }
