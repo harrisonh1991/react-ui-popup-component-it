@@ -11,6 +11,7 @@ const ITPopupMenu = props => {
     const refPopup = useRef(null);
     const [width, setWidth] = useState(-1);
     const [url, setUrl] = useState();
+    const [available, setAvailable] = useState(false);
 
     useEffect(() => {
         window.addEventListener('resize', function(){
@@ -18,15 +19,12 @@ const ITPopupMenu = props => {
         })
 
         var tscode = gettscodeParameter(window.location.href, 'tscode') || '';
-        console.log(`tscode: ${tscode} | isvalid: ${tscode !== ''}`);
         if(tscode === ''){
             tscode = CookieGet('tscode');
-            console.log(`cookie tscode: ${tscode} | isvalid: ${tscode !== ''}`);
         }
 
         if(tscode === ''){
             tscode = tscodeParameter;
-            console.log(`parameter tscode: ${tscode} | isvalid: ${tscode !== ''}`);
         }
 
         if(tscode !== ''){
@@ -37,26 +35,42 @@ const ITPopupMenu = props => {
     }, [])
 
     useEffect(() => {
-        if(!refPopup)
+        if(available)
+            updateTopPos();
+    }, [width, available])
+
+    function updateTopPos(){
+        if(!refPopup || typeof refPopup === 'undefined')
             return;
-        var _height = refPopup.current.clientHeight;
-        document.querySelector('.back-to-top').style.bottom = _height + 'px';
-    }, [width])
-
-    useEffect(() => {
-
-    }, [url])
+            
+        if(!refPopup.current || typeof refPopup.current === 'undefined' || refPopup.current === null)
+            return;
+        
+        var _height = refPopup.current.clientHeight || 0;
+        var backToTop = document.querySelector('.back-to-top');
+        backToTop && (backToTop.style.bottom = _height + 'px');
+    }
     
     function startFunc(props){
-        const { isVisiable } = props;
+        const available = getVisiable() !== '0';
 
         var body = document.querySelector("body");
 
-        if(!isVisiable)
-            return body.classList.remove("hp_sm_popup_menu_body");
+        console.log('available')
+        console.log(available);
+        if(!available){
+            body.classList.remove("hp_sm_popup_menu_body");
+        }else{
+            body.classList.add("hp_sm_popup_menu_body");
+            //updateTopPos();
+            GTATrack('view');
+        }
 
-        body.classList.add("hp_sm_popup_menu_body");
-        GTATrack('view');
+        setAvailable(available);
+    }
+
+    function getVisiable(){
+        return CookieGet(props.cookieName) || 1;
     }
 
     function hoverFunc(props){
@@ -71,6 +85,8 @@ const ITPopupMenu = props => {
         var body = document.querySelector("body");
         body.classList.remove("hp_sm_popup_menu_body");
         GTATrack('close');
+        var backToTop = document.querySelector('.back-to-top');
+        backToTop && (backToTop.style.bottom = '');
     }
 
     function GTATrack(action){

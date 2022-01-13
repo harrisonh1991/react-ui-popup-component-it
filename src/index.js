@@ -20,6 +20,7 @@ ReactDOM.render(
             href: "https://www.google.com/",
             eventLabel: "sit lead generation 20210830",
             eventCategory: 'homepage_popup',
+            cookieName: 'test11234',
             ctaEnter: {
                 content: 'Register Now'
             },

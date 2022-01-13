@@ -22,19 +22,27 @@ import ITPopupMenu from 'react-ui-it-popup';
 ```
 <ITPopupMenu {...{
     title: 'Lorem Ipsum',
-    content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
-    theme: 'light',
+    content: 'Enjoy membership discounts, exclusive drops and up to 15% off on selected products',
+    theme: 'dark',
     background: {
         dataSets: {
-            0: 'https://images.unsplash.com/photo-1612404748636-568ca4155994?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2t5JTIwY2xvdWRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
-            1024: 'https://media-exp1.licdn.com/dms/image/C511BAQE0NnIkjkotGA/company-background_10000/0/1541489744017?e=2159024400&v=beta&t=8CzJngJh5TrtF6_WFRYSlDeycAkT52hAfb4qLYGYnv8'
+            0: {
+                src: 'https://staging-ap01-itapparels.demandware.net/on/demandware.static/-/Sites-IT-HK-Library/default/dwe2d7ce88/landingPageCreative/2022/1/w2/HK_BIT_MiniPopUp_DT_SnowPeak_ForkSet_GWP_Mockup_Bkg_v3.jpg', width: 295, height: 188
+            }
         },
-        alt: 'test'
+        alt: 'lead generation'
     },
     href: "https://www.google.com/",
-    eventLabel: "Lorem Ipsum",
-    cookieName: 'section1_20210831'
-    eventCategory: 'homepage_popup'
+    eventLabel: "sit lead generation 20210830",
+    eventCategory: 'homepage_popup',
+    cookieName: 'test11234',
+    ctaEnter: {
+        content: 'Register Now'
+    },
+    classCtaClose: {
+        href: 'href1',
+        svg: 'svg1'
+    }
 }}/>
 ```
 
