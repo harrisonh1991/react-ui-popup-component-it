@@ -20,16 +20,16 @@ const ITPopupMenu = props => {
 
         var tscode = gettscodeParameter(window.location.href, 'tscode') || '';
         if(tscode === ''){
-            tscode = CookieGet('tscode');
+            tscode = CookieGet('tscode') || '';
         }
 
         if(tscode === ''){
-            tscode = tscodeParameter;
-        }
-
-        if(tscode !== ''){
             var para = new URLSearchParams();
             para.append('tscode', tscode);
+        }
+
+        if(tscode === '' && tscodeParameter !== ''){
+            tscode = tscodeParameter;
             setUrl(props.href + '?'+ para.toString())
         }
     }, [])
