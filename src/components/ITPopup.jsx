@@ -56,13 +56,10 @@ const ITPopupMenu = props => {
 
         var body = document.querySelector("body");
 
-        console.log('available')
-        console.log(available);
         if(!available){
             body.classList.remove("hp_sm_popup_menu_body");
         }else{
             body.classList.add("hp_sm_popup_menu_body");
-            //updateTopPos();
             GTATrack('view');
         }
 
@@ -95,6 +92,12 @@ const ITPopupMenu = props => {
                 'event_category' : eventCategory,
                 'event_label' : eventLabel
             });
+        else if(window.dataLayer)
+            window.dataLayer.push({
+                'event': action,
+                'event_category' : eventCategory,
+                'event_label' : eventLabel
+            })
     }
 
     return <PopupMenu refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}  {...props} href={url? url: props.href}>
