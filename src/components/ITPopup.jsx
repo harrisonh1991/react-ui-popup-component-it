@@ -7,31 +7,15 @@ import '../../src/index.css';
 
 const ITPopupMenu = props => {
 
-    const { eventLabel, eventCategory, tscodeParameter } = props;
+    const { eventLabel, eventCategory } = props;
     const refPopup = useRef(null);
     const [width, setWidth] = useState(-1);
-    const [url, setUrl] = useState();
     const [available, setAvailable] = useState(false);
 
     useEffect(() => {
         window.addEventListener('resize', function(){
             setWidth(window.innerWidth);
         })
-
-        var tscode = gettscodeParameter(window.location.href, 'tscode') || '';
-        if(tscode === ''){
-            tscode = CookieGet('tscode') || '';
-        }
-
-        if(tscode === ''){
-            var para = new URLSearchParams();
-            para.append('tscode', tscode);
-        }
-
-        if(tscode === '' && tscodeParameter !== ''){
-            tscode = tscodeParameter;
-            setUrl(props.href + '?'+ para.toString())
-        }
     }, [])
 
     useEffect(() => {
@@ -100,13 +84,9 @@ const ITPopupMenu = props => {
             })
     }
 
-    return <PopupMenu refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}  {...props} href={url? url: props.href}>
+    return <PopupMenu refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}  {...props}>
         {props.children}
     </PopupMenu>
-}
-
-ITPopupMenu.defaultProps = {
-    tscodeParameter: ''
 }
 
 export default ITPopupMenu;
