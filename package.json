@@ -1,6 +1,6 @@
 {
   "name": "react-ui-it-popup",
-  "version": "1.0.50",
+  "version": "1.0.51",
   "private": false,
   "description": "React Popup, update ITeSHOP back-top element and handle GA",
   "main": "./dist/index.js",
@@ -20,7 +20,7 @@
   "dependencies": {
     "get-url-parameter": "^1.0.0",
     "js_cookie_lib": "^1.0.1",
-    "react-ui-popup": "^1.0.35"
+    "react-ui-popup": "^1.0.37"
   },
   "scripts": {
     "start": "react-scripts start",

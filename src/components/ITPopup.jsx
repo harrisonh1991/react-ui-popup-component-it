@@ -1,53 +1,18 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import PopupMenu from 'react-ui-popup';
 import { CookieGet } from 'js_cookie_lib'
-import gettscodeParameter from 'get-url-parameter';
 
 import '../../src/index.css';
 
 const ITPopupMenu = props => {
 
     const { eventLabel, eventCategory } = props;
-    const refPopup = useRef(null);
-    const [width, setWidth] = useState(-1);
-    const [available, setAvailable] = useState(false);
 
-    useEffect(() => {
-        window.addEventListener('resize', function(){
-            setWidth(window.innerWidth);
-        })
-    }, [])
-
-    useEffect(() => {
-        if(available)
-            updateTopPos();
-    }, [width, available])
-
-    function updateTopPos(){
-        if(!refPopup || typeof refPopup === 'undefined')
-            return;
-            
-        if(!refPopup.current || typeof refPopup.current === 'undefined' || refPopup.current === null)
-            return;
-        
-        var _height = refPopup.current.clientHeight || 0;
-        var backToTop = document.querySelector('.back-to-top');
-        backToTop && (backToTop.style.bottom = _height + 'px');
-    }
-    
     function startFunc(props){
         const available = getVisiable() !== '0';
-
-        var body = document.querySelector("body");
-
-        if(!available){
-            body.classList.remove("hp_sm_popup_menu_body");
-        }else{
-            body.classList.add("hp_sm_popup_menu_body");
+        if(available){
             GTATrack('view');
         }
-
-        setAvailable(available);
     }
 
     function getVisiable(){
@@ -63,8 +28,6 @@ const ITPopupMenu = props => {
     }
 
     function closeFunc(){
-        var body = document.querySelector("body");
-        body.classList.remove("hp_sm_popup_menu_body");
         GTATrack('close');
         var backToTop = document.querySelector('.back-to-top');
         backToTop && (backToTop.style.bottom = '');
@@ -84,7 +47,7 @@ const ITPopupMenu = props => {
             })
     }
 
-    return <PopupMenu refPopup={refPopup} hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}  {...props}>
+    return <PopupMenu hoverFunc={hoverFunc} startFunc={startFunc} closeFunc={closeFunc} enterFunc={enterFunc}  {...props}>
         {props.children}
     </PopupMenu>
 }

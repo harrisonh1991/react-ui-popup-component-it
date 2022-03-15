@@ -4,7 +4,6 @@ import ITPopupMenu from './components/ITPopup.jsx';
 
 ReactDOM.render(
     <React.StrictMode>
-        <div className='back-to-top' style={{position: 'fixed', background: 'black', width: 30, height: 30, right: '20px'}}></div>
         <ITPopupMenu {...{
             title: 'Lorem Ipsum',
             content: 'Enjoy membership discounts, exclusive drops and up to 15% off on selected products',
